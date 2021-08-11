@@ -6,5 +6,5 @@
 4. Router
 5. Hook
 6. Axios
-
+7. Redux
 - 적용
