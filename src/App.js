@@ -4,8 +4,12 @@ import './App.css';
 import Detail from './Detail';
 import Main from './Main';
 import Data from './data.js';
+import Cart from './Cart.js';
 
 import { Link, Route, Switch } from 'react-router-dom';
+
+// context 범위생성
+export let 재고context = React.createContext();
 
 function App() {
   let [shoes, shoesChg] = useState(Data);
@@ -20,9 +24,15 @@ function App() {
         <Route exact path="/">
           <Main shoes={shoes} shoesChg={shoesChg} />
         </Route>
-
         <Route exact path="/detail/:id">
-          <Detail shoes={shoes} 재고={재고}/>
+          <재고context.Provider value={재고}>  
+            <Detail shoes={shoes} 재고={재고}/>
+          </재고context.Provider>
+        </Route>
+
+        <Route path="/cart">
+          <Cart>
+          </Cart>
         </Route>
 
         <Route path="/:id">

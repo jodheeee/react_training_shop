@@ -23,7 +23,7 @@ function Main(props){
                 <Shoes shoes={props.shoes} history={history}/>
                 </div>
                 <button className="btn btn-primary" onClick={()=>{
-                    axios.post('url', { id : 'abc'});
+                    axios.post('url', { id: 'id'})
                     // loading UI show
                     axios.get('https://codingapple1.github.io/shop/data2.json')
                     .then((result)=>{
@@ -33,6 +33,7 @@ function Main(props){
                     })
                     .catch(()=>{
                         // loading UI hide
+
                     })
                 }}>더보기</button>
             </div>
